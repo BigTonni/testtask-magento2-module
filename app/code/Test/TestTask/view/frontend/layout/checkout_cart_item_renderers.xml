@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="checkout_item_price_renderers"/>
+    <body>
+        <referenceBlock name="checkout.cart.form">
+		    <action method="setOverriddenTemplates">
+		        <argument xsi:type="array">
+		            <!-- list override templates -->
+		            <item name="default" xsi:type="string">Test_TestTask::cart/item/default.phtml</item>
+		            <item name="simple" xsi:type="string">Test_TestTask::cart/item/default.phtml</item>
+		            <item name="virtual" xsi:type="string">Test_TestTask::cart/item/default.phtml</item>
+		        </argument>
+		    </action>
+		</referenceBlock>
+
+    </body>
+</page>
