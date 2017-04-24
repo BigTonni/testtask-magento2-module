@@ -35,7 +35,8 @@ class ProductStock extends \Magento\Ui\Component\Listing\Columns\Column {
            
             foreach ($dataSource['data']['items'] as $key => $item) {
                 $productStockObj = $StockRegistry->getStockItem($item['entity_id']);
-                $dataSource['data']['items'][$key]['product_stock'] = $StockState->getStockQty($productStockObj['product_id'], $productStockObj['website_id']);
+                $stock = $StockState->getStockQty($productStockObj['product_id'], $productStockObj['website_id']);
+                $dataSource['data']['items'][$key]['product_stock'] = (($stock > 0) ? 'In stock' : 'Out of stock');
             }
         }
 
